@@ -11,7 +11,13 @@ import config
 from typing import Union
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
-from youtubesearchpython.future import VideosSearch, Playlist
+
+try:
+    from youtubesearchpython.future import VideosSearch, Playlist
+except ImportError:
+    VideosSearch = None
+    Playlist = None
+
 
 
 # ----------------- CONFIGURATION -----------------
